@@ -7,19 +7,23 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import RoleScreen from '../screens/RoleScreen';
 import CreateServiceScreen from '../screens/CreateServiceScreen';
+
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-<Stack.Screen
-  name="Role"
-  component={RoleScreen}
-  options={{
-    title: 'Seçim'
-  }}
-/>
+
+      <Stack.Navigator initialRouteName="Role">
+
+        <Stack.Screen
+          name="Role"
+          component={RoleScreen}
+          options={{
+            title: 'Seçim'
+          }}
+        />
+
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -44,7 +48,16 @@ export default function AppNavigator() {
           }}
         />
 
+        <Stack.Screen
+          name="CreateService"
+          component={CreateServiceScreen}
+          options={{
+            title: 'Yeni elan'
+          }}
+        />
+
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 }
