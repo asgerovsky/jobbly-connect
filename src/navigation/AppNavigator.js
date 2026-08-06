@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import RoleScreen from '../screens/RoleScreen';
+import CreateServiceScreen from '../screens/CreateServiceScreen';
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
