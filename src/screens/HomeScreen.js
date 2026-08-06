@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Button } from 'react-native';
 
 import ServiceCard from '../components/ServiceCard';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 
   const services = [
     {
@@ -33,6 +33,11 @@ export default function HomeScreen() {
         Xidmətlər
       </Text>
 
+      <Button
+        title="Yeni elan yarat"
+        onPress={() => navigation.navigate('CreateService')}
+      />
+
       <FlatList
         data={services}
         keyExtractor={(item) => item.id}
@@ -49,7 +54,9 @@ export default function HomeScreen() {
   );
 }
 
+
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     padding: 10,
@@ -58,6 +65,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 15,
   },
+
 });
