@@ -1,0 +1,16 @@
+{
+  "name": "jobby-connect",
+  "version": "1.0.0",
+  "description": "Jobbly Connect - Service Marketplace App",
+  "main": "App.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios"
+  },
+  "dependencies": {
+    "expo": "~53.0.0",
+    "react": "19.0.0",
+    "react-native": "0.79.0"
+  }
+}
