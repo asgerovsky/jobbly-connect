@@ -12,7 +12,13 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
+<Stack.Screen
+  name="Role"
+  component={RoleScreen}
+  options={{
+    title: 'Seçim'
+  }}
+/>
         <Stack.Screen
           name="Home"
           component={HomeScreen}
