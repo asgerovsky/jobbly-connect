@@ -1,16 +1,50 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+
+import ServiceCard from '../components/ServiceCard';
 
 export default function HomeScreen() {
+
+  const services = [
+    {
+      id: '1',
+      title: 'Şkaf yığılması',
+      price: 30,
+      description: 'Evə gəlib mebel yığılması xidməti'
+    },
+    {
+      id: '2',
+      title: 'Kondisioner təmiri',
+      price: 50,
+      description: 'Kondisioner yoxlanışı və təmiri'
+    },
+    {
+      id: '3',
+      title: 'Elektrik işi',
+      price: 25,
+      description: 'Ev elektrik problemlərinin həlli'
+    }
+  ];
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        Jobbly Connect
+
+      <Text style={styles.header}>
+        Xidmətlər
       </Text>
 
-      <Text style={styles.text}>
-        Xidmət tap, iş gör, qazan!
-      </Text>
+      <FlatList
+        data={services}
+        keyExtractor={(item) => item.id}
+        renderItem={({item}) => (
+          <ServiceCard
+            title={item.title}
+            price={item.price}
+            description={item.description}
+          />
+        )}
+      />
+
     </View>
   );
 }
@@ -18,18 +52,12 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    padding: 10,
   },
 
-  title: {
+  header: {
     fontSize: 30,
     fontWeight: 'bold',
-  },
-
-  text: {
-    marginTop: 10,
-    fontSize: 18,
+    marginBottom: 10,
   },
 });
